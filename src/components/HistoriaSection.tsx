@@ -63,24 +63,7 @@ export const HistoriaSection = () => {
              </p>
           </div>
 
-          <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} viewport={{ once: true }} className="mt-10 p-12 bg-zinc-950 border border-brand-gold/30 relative overflow-hidden group">
-             <div className="absolute inset-0 bg-brand-gold/5 blur-[50px] mix-blend-screen" />
-             <div className="relative z-10 text-center">
-               <span className="text-[10px] uppercase tracking-[0.5em] font-black text-brand-gold mb-6 block">Novo Álbum • Lançamento Abril 2026</span>
-               <h3 className="text-5xl md:text-7xl font-display font-black text-white mb-6 tracking-tighter uppercase drop-shadow-[0_0_20px_rgba(197,160,89,0.3)]">EXPERIÊNCIA</h3>
-               <p className="text-zinc-400 max-w-2xl mx-auto mb-12 italic text-lg border-l-2 border-brand-gold/50 pl-4 py-2">
-                 Mostrando que o mundo pode ser muito mais do que mostraram para você.
-               </p>
-               
-               <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center border-t border-b border-brand-gold/10 py-8">
-                 <div><span className="block text-xl text-white font-black uppercase tracking-tight">Miro Ferraz</span><span className="text-xs tracking-widest text-brand-gold uppercase mt-1 block">Guitarra Solo</span></div>
-                 <div><span className="block text-xl text-white font-black uppercase tracking-tight">Werry</span><span className="text-xs tracking-widest text-brand-gold uppercase mt-1 block">Guitarrista</span></div>
-                 <div><span className="block text-xl text-white font-black uppercase tracking-tight">Marcelo Baqueta</span><span className="text-xs tracking-widest text-brand-gold uppercase mt-1 block">Bateria</span></div>
-                 <div><span className="block text-xl text-white font-black uppercase tracking-tight">Carlos Sorrac</span><span className="text-xs tracking-widest text-brand-gold uppercase mt-1 block">Vocal</span></div>
-                 <div><span className="block text-xl text-white font-black uppercase tracking-tight">Bruno Formiga</span><span className="text-xs tracking-widest text-brand-gold uppercase mt-1 block">Baixo</span></div>
-               </div>
-             </div>
-          </motion.div>
+
 
         </div>
       </div>
