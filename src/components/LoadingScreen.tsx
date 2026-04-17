@@ -67,20 +67,32 @@ export const LoadingScreen = ({ onFinish }: { onFinish: () => void }) => {
               className="w-72 md:w-96 relative z-10 drop-shadow-[0_0_40px_rgba(212,175,55,0.4)]"
             />
 
-            {/* Tagline */}
+            {/* Tagline / A lenda continua */}
             <motion.p
-              initial={{ opacity: 0, letterSpacing: "0.3em" }}
-              animate={{ opacity: phase === "out" ? 0 : 0.5, letterSpacing: "0.6em" }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-[9px] uppercase font-black text-brand-gold tracking-[0.6em]"
+              initial={{ opacity: 0, letterSpacing: "0.1em", y: 10 }}
+              animate={{ opacity: phase === "out" ? 0 : 0.8, letterSpacing: "0.25em", y: 0 }}
+              transition={{ delay: 0.6, duration: 1.2 }}
+              className="text-xl md:text-3xl font-display uppercase font-black text-white tracking-[0.25em] drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
             >
-              Desde 1982 · Guará · DF
+              A lenda continua
             </motion.p>
+          </motion.div>
+
+          {/* Since 1986 - Brazil no bottom */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: phase === "out" ? 0 : 0.4 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="absolute bottom-6 left-0 right-0 text-center"
+          >
+            <p className="text-[10px] uppercase font-serif italic text-zinc-400 tracking-[0.5em]">
+              Since 1986 — Brazil
+            </p>
           </motion.div>
 
           {/* Barra de progresso */}
           <motion.div
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-white/10 overflow-hidden"
+            className="absolute bottom-16 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-white/10 overflow-hidden"
           >
             <motion.div
               initial={{ scaleX: 0 }}

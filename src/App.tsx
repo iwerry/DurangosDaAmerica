@@ -60,6 +60,15 @@ const AnimatedRoutes = () => {
 export default function App() {
   const [loaded, setLoaded] = useState(false);
 
+  React.useEffect(() => {
+    const handleReload = () => {
+      window.scrollTo(0, 0); // Vai pro topo do site
+      setLoaded(false);      // Mostra o loading screen de novo
+    };
+    window.addEventListener("reloadApp", handleReload);
+    return () => window.removeEventListener("reloadApp", handleReload);
+  }, []);
+
   return (
     <BrowserRouter>
       {!loaded && <LoadingScreen onFinish={() => setLoaded(true)} />}

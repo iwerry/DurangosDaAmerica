@@ -18,8 +18,8 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-xl border-b border-brand-gold/10 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
-        {/* Logo que volta pro Home */}
-        <Link to="/">
+        {/* Logo que volta pro Home e recarrega a animação */}
+        <Link to="/" onClick={() => window.dispatchEvent(new Event("reloadApp"))}>
           <motion.img
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
