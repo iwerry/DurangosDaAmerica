@@ -2,19 +2,19 @@ export const IMAGES = {
   LOGO_COLOR: "/images/logos/DurangosAmerica.png",
   LOGO_OUTLINE: "/images/logos/DurangosAmerica_Branca.png",
   LOGO_BLACK: "/images/logos/DurangosAmerica_Preta.png",
-  PHARAOH_COWBOY: "https://images.unsplash.com/photo-1549834125-82d3c48159a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+  PHARAOH_COWBOY: "/images/gallery/pic6.jpg",
   TEXTURE_GOLD: "/images/texturas/Dourado.png",
   TEXTURE_RUST: "/images/texturas/Enferrujado.png",
   TEXTURE_BRUSHED: "/images/texturas/Prata.png",
 };
 
 export const GALLERY = [
-  { id: 1, url: "https://picsum.photos/seed/band-concert-1/1200/800", title: "Show em São Paulo", category: "Live" },
-  { id: 2, url: "https://picsum.photos/seed/metal-guitar/800/1200", title: "Gravação Studio", category: "Studio" },
-  { id: 3, url: "https://picsum.photos/seed/rock-crowd/1200/1200", title: "Arena Metal", category: "Live" },
-  { id: 4, url: "https://picsum.photos/seed/desert-highway/1200/800", title: "Shoot do Oeste", category: "Shoot" },
-  { id: 5, url: "https://picsum.photos/seed/vocal-scream/800/1200", title: "Vocal Intense", category: "Live" },
-  { id: 6, url: "https://picsum.photos/seed/pharaoh-mask/1200/800", title: "Backstage Prep", category: "Studio" },
+  { id: 1, url: "/images/gallery/pic1.jpg", title: "Show em São Paulo", category: "Live" },
+  { id: 2, url: "/images/gallery/pic2.jpg", title: "Gravação Studio", category: "Studio" },
+  { id: 3, url: "/images/gallery/pic3.jpg", title: "Arena Metal", category: "Live" },
+  { id: 4, url: "/images/gallery/pic4.jpg", title: "Shoot do Oeste", category: "Shoot" },
+  { id: 5, url: "/images/gallery/pic5.jpg", title: "Vocal Intense", category: "Live" },
+  { id: 6, url: "/images/gallery/pic6.jpg", title: "Backstage Prep", category: "Studio" },
 ];
 
 export const RELEASES = [
@@ -23,7 +23,7 @@ export const RELEASES = [
     title: "Sinfonia do Saara",
     type: "Single",
     year: "2024",
-    cover: "https://picsum.photos/seed/pharaoh-skull/800/800",
+    cover: "/images/releases/rel1.jpg",
     links: {
       spotify: "#",
       apple: "#",
@@ -35,7 +35,7 @@ export const RELEASES = [
     title: "Cidade Fantasma",
     type: "Single",
     year: "2024",
-    cover: "https://picsum.photos/seed/western-desert/800/800",
+    cover: "/images/releases/rel2.jpg",
     links: {
       spotify: "#",
       apple: "#",
@@ -47,7 +47,7 @@ export const RELEASES = [
     title: "Oeste Sangrento",
     type: "Single",
     year: "2023",
-    cover: "https://picsum.photos/seed/rusty-metal/800/800",
+    cover: "/images/releases/rel3.jpg",
     links: {
       spotify: "#",
       apple: "#",
@@ -59,7 +59,7 @@ export const RELEASES = [
     title: "Durangos da América",
     type: "Album",
     year: "2023",
-    cover: "https://picsum.photos/seed/metal-band/800/800",
+    cover: "/images/releases/rel4.jpg",
     links: {
       spotify: "#",
       apple: "#",
