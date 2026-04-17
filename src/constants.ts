@@ -1,11 +1,11 @@
 export const IMAGES = {
-  LOGO_COLOR: "https://storage.googleapis.com/bnd-img-f2038.appspot.com/bnd-durangos/logo_durangos.png",
-  LOGO_OUTLINE: "https://storage.googleapis.com/bnd-img-f2038.appspot.com/bnd-durangos/logo_durangos_fundo_contorno.png",
-  LOGO_BLACK: "https://storage.googleapis.com/bnd-img-f2038.appspot.com/bnd-durangos/logo_durangos_fundo_preto.png",
-  PHARAOH_COWBOY: "https://storage.googleapis.com/bnd-img-f2038.appspot.com/bnd-durangos/Pharaoh%20Skull%20Cowboy%20Brasil.png",
-  TEXTURE_GOLD: "https://storage.googleapis.com/bnd-img-f2038.appspot.com/bnd-durangos/metal_gold.png",
-  TEXTURE_RUST: "https://storage.googleapis.com/bnd-img-f2038.appspot.com/bnd-durangos/metal_rust.png",
-  TEXTURE_BRUSHED: "https://storage.googleapis.com/bnd-img-f2038.appspot.com/bnd-durangos/metal_brushed.png",
+  LOGO_COLOR: "/images/logos/DurangosAmerica.png",
+  LOGO_OUTLINE: "/images/logos/DurangosAmerica_Branca.png",
+  LOGO_BLACK: "/images/logos/DurangosAmerica_Preta.png",
+  PHARAOH_COWBOY: "https://images.unsplash.com/photo-1549834125-82d3c48159a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+  TEXTURE_GOLD: "/images/texturas/Dourado.png",
+  TEXTURE_RUST: "/images/texturas/Enferrujado.png",
+  TEXTURE_BRUSHED: "/images/texturas/Prata.png",
 };
 
 export const GALLERY = [

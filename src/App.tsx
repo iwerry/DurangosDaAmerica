@@ -33,9 +33,14 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <button className="border border-brand-gold/30 px-6 py-2 text-brand-gold font-black uppercase text-[9px] tracking-[0.3em] hover:bg-brand-gold hover:text-black transition-all duration-500">
-          Acessar
-        </button>
+        <a 
+          href="https://open.spotify.com/intl-pt/artist/28lheRnAv1cNCoRkiObKy7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border border-brand-gold/30 px-6 py-2 text-brand-gold font-black uppercase text-[9px] tracking-[0.3em] hover:bg-brand-gold hover:text-black transition-all duration-500"
+        >
+          Spotify
+        </a>
       </div>
     </nav>
   );
@@ -144,12 +149,22 @@ const MusicCard = ({ release }: MusicCardProps) => {
           {release.title}
         </h3>
         <div className="flex gap-2">
-          <button className="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/5 py-4 transition-all duration-300">
-            <span className="text-[9px] uppercase tracking-[0.2em] font-black">Escutar</span>
-          </button>
-          <button className="w-14 flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/5 transition-colors">
-            <ExternalLink className="w-4 h-4 text-zinc-500" />
-          </button>
+          <a 
+            href="https://open.spotify.com/intl-pt/artist/28lheRnAv1cNCoRkiObKy7" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/5 py-4 transition-all duration-300"
+          >
+            <span className="text-[9px] uppercase tracking-[0.2em] font-black hover:text-brand-gold">Spotify</span>
+          </a>
+          <a 
+            href={release.links?.spotify || "https://open.spotify.com/intl-pt/artist/28lheRnAv1cNCoRkiObKy7"} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-14 flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/5 transition-colors"
+          >
+            <ExternalLink className="w-4 h-4 text-zinc-500 hover:text-brand-gold" />
+          </a>
         </div>
       </div>
     </motion.div>
@@ -337,9 +352,14 @@ export default function App() {
                 <p className="text-xs text-zinc-500 leading-relaxed mb-8 font-serif italic">
                   O novo épico do metal nacional disponível em todas as plataformas.
                 </p>
-                <button className="w-full border border-brand-gold py-4 text-[9px] font-black uppercase tracking-[0.3em] text-brand-gold hover:bg-brand-gold hover:text-black transition-all">
-                  Explorar Obra
-                </button>
+                <a 
+                  href="https://open.spotify.com/intl-pt/artist/28lheRnAv1cNCoRkiObKy7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full border border-brand-gold py-4 text-[9px] font-black uppercase tracking-[0.3em] text-brand-gold hover:bg-brand-gold hover:text-black transition-all block text-center"
+                >
+                  Ouvir no Spotify
+                </a>
               </motion.div>
             </div>
 

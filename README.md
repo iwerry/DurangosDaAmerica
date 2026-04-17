@@ -1,20 +1,18 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img src="public/images/logos/DurangosAmerica.png" width="300" alt="Durangos da América Logo" />
 </div>
 
-# Run and deploy your AI Studio app
+# Banda Durangos da América
 
-This contains everything you need to run your app locally.
+Este site é a plataforma oficial da banda **Durangos da América**. Aqui você encontra as últimas novidades, lançamentos, galerias de fotos, ingressos para a turnê e acesso às nossas músicas.
 
-View your app in AI Studio: https://ai.studio/apps/859077db-ee1c-4769-887d-ef4c55055e42
+## Rodando o site localmente
 
-## Run Locally
+**Pré-requisitos:** Node.js
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
+1. Instale as dependências:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Rode o servidor de desenvolvimento:
    `npm run dev`
+
+Ouça nossas músicas no [Spotify](https://open.spotify.com/intl-pt/artist/28lheRnAv1cNCoRkiObKy7).
