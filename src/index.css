@@ -9,6 +9,14 @@
   
   --font-display: "Space Grotesk", sans-serif;
   --font-serif: "Playfair Display", serif;
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @layer base {

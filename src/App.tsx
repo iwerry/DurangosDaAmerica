@@ -113,6 +113,36 @@ const Hero = () => {
   );
 };
 
+const StreamingMarquee = () => {
+  const platforms = [
+    { name: "Spotify", url: "https://open.spotify.com/intl-pt/artist/28lheRnAv1cNCoRkiObKy7" },
+    { name: "Apple Music", url: "#" },
+    { name: "Deezer", url: "#" },
+    { name: "YouTube", url: "https://www.youtube.com/results?search_query=Durangos+da+Am%C3%A9rica" },
+    { name: "Vevo", url: "#" },
+  ];
+
+  const items = [...platforms, ...platforms, ...platforms, ...platforms, ...platforms, ...platforms];
+
+  return (
+    <div className="w-full relative overflow-hidden bg-brand-gold/5 border-y border-brand-gold/10 py-6 flex items-center group">
+      <div className="flex animate-marquee whitespace-nowrap min-w-full group-hover:[animation-play-state:paused]">
+        {items.map((item, idx) => (
+          <a 
+            key={idx} 
+            href={item.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex-shrink-0 mx-10 md:mx-20 text-brand-gold/80 font-display font-black uppercase text-2xl md:text-4xl tracking-[0.2em] hover:text-white hover:drop-shadow-[0_0_15px_rgba(212,175,55,0.8)] transition-all duration-300"
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 interface MusicCardProps {
   release: typeof RELEASES[0];
   key?: any;
@@ -415,6 +445,8 @@ export default function App() {
       
       <Hero />
       
+      <StreamingMarquee />
+      
       {/* Side Panel HUD for Latest Release */}
       <section id="músicas" className="py-40 relative">
         <div className="max-w-7xl mx-auto px-10 relative z-10">
@@ -518,7 +550,10 @@ export default function App() {
           <div className="w-full h-[1px] bg-white/5 mb-10" />
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-zinc-600 text-[9px] uppercase tracking-widest font-black">© 2024 DURANGOS DA AMÉRICA PRODUCTION</p>
+            <div className="flex flex-col gap-1 items-center md:items-start">
+              <p className="text-zinc-600 text-[9px] uppercase tracking-widest font-black">© 2026 DURANGOS DA AMÉRICA</p>
+              <p className="text-zinc-700 text-[8px] uppercase tracking-widest font-bold">Desenvolvimento: Draft Creative Studio Ltda</p>
+            </div>
             <div className="flex gap-8 text-[9px] uppercase tracking-widest font-black text-zinc-500">
               <a href="#" className="hover:text-brand-gold">Terms</a>
               <a href="#" className="hover:text-brand-gold">Privacy</a>
