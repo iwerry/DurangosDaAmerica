@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
-import { X, Mail, Music2 } from "lucide-react";
+import { X, Mail } from "lucide-react";
+import { IMAGES } from "../constants";
 import React, { useEffect, useState } from "react";
 
 const STORAGE_KEY = "durangos_newsletter_done";
@@ -51,13 +52,13 @@ export const NewsletterModal = () => {
     <AnimatePresence>
       {visible && (
         <>
-          {/* Overlay */}
+          {/* Overlay — clique fora fecha */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[9998] bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[9998] bg-black/80 backdrop-blur-sm cursor-pointer"
             onClick={handleClose}
           />
 
@@ -86,14 +87,16 @@ export const NewsletterModal = () => {
               <div className="relative z-10 p-10">
                 {!submitted ? (
                   <>
-                    {/* Ícone */}
+                    {/* Logo da banda */}
                     <div className="flex justify-center mb-6">
-                      <div className="w-14 h-14 rounded-full border border-brand-gold/30 flex items-center justify-center">
-                        <Music2 className="w-6 h-6 text-brand-gold" />
-                      </div>
+                      <img
+                        src={IMAGES.LOGO_OUTLINE}
+                        alt="Durangos da América"
+                        className="h-14 object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.3)]"
+                      />
                     </div>
 
-                    {/* Título */}
+                    {/* Título */
                     <h3 className="text-2xl md:text-3xl font-display font-black text-white text-center uppercase tracking-tight mb-2">
                       Entre no Círculo
                     </h3>
