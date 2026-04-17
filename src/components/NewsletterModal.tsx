@@ -13,10 +13,20 @@ export const NewsletterModal = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (localStorage.getItem(STORAGE_KEY)) return;
-    // Abre após 10 segundos
-    const t = setTimeout(() => setVisible(true), 10000);
-    return () => clearTimeout(t);
+    // Escuta evento global para forçar a abertura
+    const handleOpen = () => setVisible(true);
+    window.addEventListener("openNewsletter", handleOpen);
+
+    // Auto-open normal (só se não preencheu)
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      const t = setTimeout(() => setVisible(true), 10000);
+      return () => {
+        clearTimeout(t);
+        window.removeEventListener("openNewsletter", handleOpen);
+      };
+    }
+
+    return () => window.removeEventListener("openNewsletter", handleOpen);
   }, []);
 
   const handleClose = () => setVisible(false);
@@ -96,9 +106,9 @@ export const NewsletterModal = () => {
                       />
                     </div>
 
-                    {/* Título */
+                    {/* Título */}
                     <h3 className="text-2xl md:text-3xl font-display font-black text-white text-center uppercase tracking-tight mb-2">
-                      Entre no Círculo
+                       Entre no Círculo
                     </h3>
                     <p className="text-center text-zinc-400 text-sm font-serif italic mb-8">
                       Notícias, lançamentos e shows antes de todo mundo.

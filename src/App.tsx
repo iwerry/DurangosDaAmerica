@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 
 import { LoadingScreen } from "./components/LoadingScreen";
-import { AnnouncementBar } from "./components/AnnouncementBar";
 import { NewsletterModal } from "./components/NewsletterModal";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -68,7 +67,6 @@ export default function App() {
       <div className={`min-h-screen font-sans transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}>
         <div className="noise-overlay" />
         <NewsletterModal />
-        <AnnouncementBar />
         <Navbar />
 
         <AnimatedRoutes />

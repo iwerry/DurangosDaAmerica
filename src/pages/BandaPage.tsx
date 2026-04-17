@@ -40,10 +40,13 @@ const members = [
   },
 ];
 
+// Triplicar para loop contínuo e suave CSS Marquee
+const items = [...members, ...members, ...members, ...members];
+
 export const BandaPage = () => {
   return (
-    <div className="min-h-screen bg-zinc-950 pt-28">
-      {/* Hero EP */}
+    <div className="min-h-screen bg-zinc-950 pt-20">
+      {/* Hero EP - Foto do Álbum/Experiência chamativa */}
       <div className="relative h-[65vh] flex items-end overflow-hidden">
         <img
           src="/images/ep_experiencia.jpg"
@@ -55,8 +58,9 @@ export const BandaPage = () => {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 pb-14">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-            <span className="inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.5em] font-black text-brand-gold mb-4 glass-panel px-4 py-2">
-              <Disc className="w-3 h-3" /> Novo EP • Abril 2026
+            <span className="inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.5em] font-black text-brand-gold mb-4 glass-panel px-4 py-2 hover:bg-white/10 transition-colors cursor-pointer"
+                  onClick={() => window.dispatchEvent(new Event("openNewsletter"))}>
+              <Disc className="w-3 h-3 text-brand-gold animate-spin-slow" /> Pré-Lançamento Abril 2026
             </span>
             <h1 className="text-7xl md:text-9xl font-display font-black text-white tracking-tighter uppercase leading-none mb-3 drop-shadow-[0_0_40px_rgba(197,160,89,0.3)]">
               EXPERIÊNCIA
@@ -64,7 +68,7 @@ export const BandaPage = () => {
             <p className="text-zinc-300 text-lg font-serif italic border-l-2 border-brand-gold/50 pl-4 max-w-lg">
               "Mostrando que o mundo pode ser muito mais do que mostraram para você."
             </p>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap gap-4">
               <a
                 href="https://open.spotify.com/intl-pt/artist/28lheRnAv1cNCoRkiObKy7"
                 target="_blank"
@@ -73,64 +77,62 @@ export const BandaPage = () => {
               >
                 Ouvir no Spotify
               </a>
+              <button 
+                onClick={() => window.dispatchEvent(new Event("openNewsletter"))} 
+                className="inline-block bg-white/5 border border-white/10 px-8 py-4 text-[9px] font-black uppercase tracking-[0.3em] text-white hover:bg-white hover:text-black transition-all duration-500"
+              >
+                Assinar Newsletter
+              </button>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Membros — cards arrastáveis */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-24">
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mb-16">
+      {/* Membros — slides infinitos */}
+      <div className="w-full py-24 overflow-hidden relative">
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mb-16 max-w-7xl mx-auto px-6 md:px-10">
           <span className="text-[9px] uppercase tracking-[0.5em] font-black text-brand-gold mb-3 block opacity-60">
             A Formação
           </span>
           <h2 className="text-5xl md:text-7xl font-display font-black text-white tracking-tighter uppercase">
             A BANDA
           </h2>
-          <p className="text-zinc-500 text-xs mt-3 tracking-widest font-bold uppercase">
-            Arraste os cards · Explore a banda
-          </p>
         </motion.div>
 
-        {/* Área de drag — overflow-x para mobile */}
-        <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory md:grid md:grid-cols-3 md:overflow-visible">
-          {members.map((member, idx) => (
-            <motion.div
-              key={member.name}
-              drag
-              dragConstraints={{ left: -100, right: 100, top: -40, bottom: 40 }}
-              dragElastic={0.15}
-              whileDrag={{ scale: 1.04, zIndex: 50, boxShadow: "0 20px 60px rgba(212,175,55,0.2)" }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.08, duration: 0.6 }}
-              className="group relative flex-shrink-0 w-72 md:w-auto glass-panel overflow-hidden cursor-grab active:cursor-grabbing hover:border-brand-gold/30 transition-colors duration-500 snap-center select-none"
-            >
-              <div className="relative aspect-[3/4] overflow-hidden bg-black">
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  draggable={false}
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-90 group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-                <div className="absolute top-4 right-4 glass-panel px-3 py-1">
-                  <span className="text-[8px] font-black uppercase tracking-widest text-brand-gold">
-                    Desde {member.since}
+        {/* CSS Marquee */}
+        <div className="flex group w-[200%] sm:w-[150%] md:w-[250%] lg:w-[350%]">
+          <div className="flex w-full animate-marquee-fast group-hover:[animation-play-state:paused] gap-6 pl-6">
+            {items.map((member, idx) => (
+              <div
+                key={idx}
+                className="group/card relative flex-shrink-0 w-80 md:w-96 glass-panel overflow-hidden transition-colors duration-500 will-change-transform"
+              >
+                <div className="relative aspect-[3/4] overflow-hidden bg-black">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover grayscale opacity-60 group-hover/card:opacity-90 group-hover/card:grayscale-0 transition-all duration-700 group-hover/card:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                  <div className="absolute top-4 right-4 glass-panel px-3 py-1">
+                    <span className="text-[8px] font-black uppercase tracking-widest text-brand-gold">
+                      Desde {member.since}
+                    </span>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover/card:translate-y-0 transition-transform duration-500">
+                  <span className="text-[9px] uppercase tracking-[0.4em] text-brand-gold font-black opacity-80 mb-2 block">
+                    {member.role}
                   </span>
+                  <h3 className="text-2xl font-display font-black text-white mb-3 tracking-tight">
+                    {member.name}
+                  </h3>
+                  <p className="text-zinc-300 text-sm leading-relaxed font-serif italic line-clamp-3 group-hover/card:line-clamp-none transition-all">{member.bio}</p>
                 </div>
               </div>
-              <div className="p-6">
-                <span className="text-[8px] uppercase tracking-[0.4em] text-brand-gold font-black opacity-70 mb-1 block">
-                  {member.role}
-                </span>
-                <h3 className="text-xl font-display font-black text-white mb-3 tracking-tight">
-                  {member.name}
-                </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed font-serif italic">{member.bio}</p>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
