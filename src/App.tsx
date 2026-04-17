@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { LoadingScreen } from "./components/LoadingScreen";
+import { AnnouncementBar } from "./components/AnnouncementBar";
 import { NewsletterModal } from "./components/NewsletterModal";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { StreamingMarquee } from "./components/StreamingMarquee";
+import { NewsSection } from "./components/NewsSection";
 import { MusicSection } from "./components/MusicSection";
 import { AboutSection } from "./components/AboutSection";
 import { HistoriaSection } from "./components/HistoriaSection";
@@ -22,11 +24,14 @@ export default function App() {
       <div className={`min-h-screen font-sans transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}>
         <div className="noise-overlay" />
         <NewsletterModal />
+        <AnnouncementBar />
         <Navbar />
 
         <Hero />
 
         <StreamingMarquee />
+
+        <NewsSection />
 
         <MusicSection />
 

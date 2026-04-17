@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "date": "Abril 2026",
+    "tag": "Lançamento",
+    "title": "EP 'Experiência' Disponível Agora",
+    "excerpt": "O novo EP da Durangos da América chegou com tudo. Quatro décadas de estrada condensadas em um manifesto sonoro. Ouça agora em todas as plataformas.",
+    "image": "/images/ep_experiencia.jpg",
+    "link": "https://open.spotify.com/intl-pt/artist/28lheRnAv1cNCoRkiObKy7",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "date": "Março 2026",
+    "tag": "Banda",
+    "title": "Nova Formação — Retorno ao Palco",
+    "excerpt": "Com Daniel Rodrigues na guitarra, Carlos Sorrac no vocal, Marcelo Baqueta na bateria e Bruno Formiga no baixo, a Durangos retorna renovada e mais pesada do que nunca.",
+    "image": "/images/gallery/pic3.jpg",
+    "link": "#banda",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "date": "2025",
+    "tag": "Histórico",
+    "title": "500+ Shows em Quatro Décadas",
+    "excerpt": "Do asfalto do Guará aos palcos do Brasil: a Durangos da América completou mais de 500 apresentações ao longo de sua trajetória. Um legado vivo do rock independente do DF.",
+    "image": "/images/gallery/pic1.jpg",
+    "link": "#história",
+    "featured": false
+  }
+]
