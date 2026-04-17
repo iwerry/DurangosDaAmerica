@@ -21,7 +21,7 @@ const Navbar = () => {
           <motion.img 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            src={IMAGES.LOGO_COLOR} 
+            src={IMAGES.LOGO_OUTLINE} 
             alt="Durangos Logo" 
             className="h-10 md:h-12 object-contain"
           />
